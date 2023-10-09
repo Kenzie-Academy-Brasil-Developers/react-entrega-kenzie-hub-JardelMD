@@ -1,13 +1,14 @@
 import { FormRegister } from "../../components/FormRegister"
+import styles from "./style.module.scss"
 
 export const RegisterPage = () => {
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 <h1 className="logo">Kenzie Hub</h1>
-                <button>Voltar</button>
+                <button className={styles.btn}>Voltar</button>
             </header>
-            <main>
+            <main className={styles.main}>
                 <FormRegister />
             </main>
 

@@ -1,19 +1,24 @@
+import styles from "./style.module.scss"
+
 export const DashboardPage = () => {
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 <h1 className="logo">Kenzie Hub</h1>
-                <button>Sair</button>
+                <button className={styles.btn}>Sair</button>
             </header>
             <main>
-                <div>
-                    <h2>Olá, Samuel Leão</h2>
-                    <span>Primeiro módulo (Introdução ao Frontend)</span>
+                <hr className={styles.separator}/>
+                <div className={styles.info}>
+                    <h2 className="title1 nowrap">Olá, Samuel Leão</h2>
+                    <span className="text1 ">Primeiro módulo (Introdução ao Frontend)</span>
                 </div>
-                <div>
-                    <p>Que pena! Estamos em desenvolvimento :(</p>
-                    <span>Nossa aplicação está em desenvolvimento, em breve teremos novidades</span>
+                <hr className={styles.separator}/>
+                <div className={styles.info2}>
+                    <p className="title1">Que pena! Estamos em desenvolvimento :(</p>
+                    <span className={styles.span}>Nossa aplicação está em desenvolvimento, em breve teremos novidades</span>
                 </div>
+                
             </main>
         </>
     )

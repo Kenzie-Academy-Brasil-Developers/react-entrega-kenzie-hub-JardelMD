@@ -9,6 +9,9 @@
     &.alignCenter{
         text-align: center;
     }
+    &.nowrap{
+        white-space: nowrap;
+    }
 }
 
 .title2 {
@@ -19,12 +22,16 @@
 
 %text {
     font-weight:700;
-    color: var(--color-white);
+    color: var(--color-grey-1);
 }
 
 .text1 {
     @extend %text;
+    color: var(--color-grey-1);
     font-size: 12px;
+    &.alignCenter{
+        text-align: center;
+    }
 }
 
 .paragraph {

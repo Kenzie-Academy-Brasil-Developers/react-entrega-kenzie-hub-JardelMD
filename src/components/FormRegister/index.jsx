@@ -1,6 +1,7 @@
-import { useForm } from "react-hook-form";
-import { Input } from "../Input";
-import { Select } from "../Select";
+import { useForm } from "react-hook-form"
+import { Input } from "../Input"
+import { Select } from "../Select"
+import styles from "./style.module.scss"
 
 export const FormRegister = () => {
     const { register, handleSubmit } = useForm();
@@ -10,10 +11,10 @@ export const FormRegister = () => {
     }
 
     return (
-        <section>
-            <h2>Crie sua conta</h2>
-            <span>Rapido e grátis, vamos nessa</span>
-            <form onSubmit={handleSubmit(submit)}>
+        <section className={styles.container}>
+            <h2 className="title1 alignCenter">Crie sua conta</h2>
+            <span className="text1 alignCenter">Rapido e grátis, vamos nessa</span>
+                <form className={styles.form} onSubmit={handleSubmit(submit)}>
                 <Input
                     type="text"
                     id="name"
@@ -56,7 +57,6 @@ export const FormRegister = () => {
                     label="Contato"
                     {...register("contact")}
                 />
-                <label htmlFor="module">Selecionar módulo</label>
                 <Select
                     label="Selecionar módulo"
                     {...register("module")}>
@@ -64,7 +64,7 @@ export const FormRegister = () => {
                     <option value="Segundo Módulo">Segundo Módulo</option>
                     <option value="Terceiro Módulo">Terceiro Módulo</option>
                 </Select>
-                <button type="submit">Cadastrar</button>
+                <button className="btnNegative" type="submit">Cadastrar</button>
             </form>
         </section>
     )
