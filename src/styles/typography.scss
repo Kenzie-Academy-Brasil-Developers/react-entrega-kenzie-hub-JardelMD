@@ -1,0 +1,41 @@
+%title {
+    font-weight: bold;
+    color: var(--color-grey-0);
+}
+
+.title1 {
+    @extend %title;
+    font-size: 18px;
+    &.alignCenter{
+        text-align: center;
+    }
+}
+
+.title2 {
+    @extend %title;
+    font-size: 16px;
+}
+
+
+%text {
+    font-weight:700;
+    color: var(--color-white);
+}
+
+.text1 {
+    @extend %text;
+    font-size: 12px;
+}
+
+.paragraph {
+    @extend %text;
+    font-size: 1rem;
+}
+
+
+.headlineBold {
+    font-weight: bold;
+    color: var(--color-grey-1);
+    font-size: 12px;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    // border: 1px solid red;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    display: flex;
+    height: 40px;
+    padding: 0px 22.334px;
+    justify-content: center;
+    align-items: center;
+    gap: 10.152px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1.218px solid var(--color-grey-1);
+    background: var(--color-grey-1);
+    color: var(--color-grey-0);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26.394px;
+}

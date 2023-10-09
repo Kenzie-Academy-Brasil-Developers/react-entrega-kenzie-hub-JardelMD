@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
+import styles from "./style.module.scss"
 
 export const FormLogin = () => {
     const { register, handleSubmit } = useForm();
@@ -9,9 +10,9 @@ export const FormLogin = () => {
     }
 
     return (
-        <section>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit(submit)}>
+        <section className={styles.container}>
+            <h2 className="title1 alignCenter">Login</h2>
+            <form className={styles.form} onSubmit={handleSubmit(submit)}>
                 <Input
                     type="email"
                     id="email"
@@ -26,9 +27,9 @@ export const FormLogin = () => {
                     label="Senha"
                     {...register("password")}
                 />
-                <button type="submit">Entrar</button>
-                <p>Ainda não possui uma conta?</p>
-                <button >Cadastre-se</button>
+                <button className="btnDefault" type="submit">Entrar</button>
+                <p className="headlineBold">Ainda não possui uma conta?</p>
+                <button className={styles.btn} >Cadastre-se</button>
             </form>
         </section>
     )

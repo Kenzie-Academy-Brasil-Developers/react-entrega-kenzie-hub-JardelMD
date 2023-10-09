@@ -1,11 +1,10 @@
 import { FormRegister } from "../../components/FormRegister"
-import Logo from "../../assets/Logo.jpg"
 
 export const RegisterPage = () => {
     return (
         <>
             <header>
-                <img src={Logo} alt="Logo KenzieHub" />
+                <h1 className="logo">Kenzie Hub</h1>
                 <button>Voltar</button>
             </header>
             <main>
