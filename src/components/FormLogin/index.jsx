@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 import styles from "./style.module.scss"
+import { Link } from "react-router-dom";
 
 export const FormLogin = () => {
     const { register, handleSubmit } = useForm();
@@ -29,7 +30,7 @@ export const FormLogin = () => {
                 />
                 <button className="btnDefault" type="submit">Entrar</button>
                 <p className="headlineBold">Ainda não possui uma conta?</p>
-                <button className={styles.btn} >Cadastre-se</button>
+                 <Link className={styles.btn}  to={"/register"}><button className={styles.word}>Cadastre-se</button></Link > 
             </form>
         </section>
     )

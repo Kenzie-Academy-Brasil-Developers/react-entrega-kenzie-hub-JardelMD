@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./style.module.scss"
 
 export const DashboardPage = () => {
@@ -5,7 +6,7 @@ export const DashboardPage = () => {
         <>
             <header className={styles.header}>
                 <h1 className="logo">Kenzie Hub</h1>
-                <button className={styles.btn}>Sair</button>
+                <Link to={"/"}><button className={styles.btn}>Sair</button></Link>
             </header>
             <main>
                 <hr className={styles.separator}/>

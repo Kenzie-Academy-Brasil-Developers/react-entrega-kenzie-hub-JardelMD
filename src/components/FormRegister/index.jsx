@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import { Input } from "../Input"
 import { Select } from "../Select"
 import styles from "./style.module.scss"
+import { Link } from "react-router-dom"
 
 export const FormRegister = () => {
     const { register, handleSubmit } = useForm();
@@ -64,7 +65,7 @@ export const FormRegister = () => {
                     <option value="Segundo Módulo">Segundo Módulo</option>
                     <option value="Terceiro Módulo">Terceiro Módulo</option>
                 </Select>
-                <button className="btnNegative" type="submit">Cadastrar</button>
+                <Link className="btnNegative" to={"/dashboard"}> <button className={styles.word} type="submit">Cadastrar</button></Link>
             </form>
         </section>
     )

@@ -13,7 +13,7 @@ export const RoutesMain = () => {
             <Route path="/" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/404" element={<NotFoundPage/>} />
+            <Route path="/*" element={<NotFoundPage/>} />
         </Routes>
     );
 };
