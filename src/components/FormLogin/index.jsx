@@ -2,16 +2,36 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input";
 import styles from "./style.module.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {formLoginSchema} from "../formLoginSchema"
+import { useState } from "react";
 
-export const FormLogin = () => {
+export const FormLogin = ({setUser}) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formLoginSchema),
      });
+     const [loading, setLoading] = useState(false);
 
+     const navigate = useNavigate();
+
+     const userLogin = async (formData) => {
+        try {
+          setLoading(true);
+          const { data } = await api.post("/sessions", formData);
+          setUser(data.name);
+          localStorage.setItem("@TOKEN", data.token);
+          navigate("/dashboard");
+        } catch (error) {
+          console.log(error);
+          if (error.response?.data === "Incorrect password") {
+            alert("Credenciais inválidas");
+          }
+        } finally {
+          setLoading(false);
+        }
+      };
     const submit = (formData) => {
-        console.log(formData);
+       userLogin(formData);
     }
 
     return (
