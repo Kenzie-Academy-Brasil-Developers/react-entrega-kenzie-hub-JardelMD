@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <RoutesMain toast={toast}/>
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={2000} theme="dark"/>
     </div>
   )
 }

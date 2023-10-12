@@ -20,12 +20,11 @@ export const FormRegister = ({ toast }) => {
             const { data } = await api.post('/users', formData);
             console.log(data);
             navigate("/");
-            toast.success("Usuário cadastrado com sucesso!");
+            toast.success("Conta criada com sucesso!");
         } catch (error) {
             console.log(error);
-            if (error.response?.data === "Email already exists") {
-                toast.warn("Usuário já cadastrado!");
-            }
+            toast.error("Ops! Algo deu errado");
+
         } finally {
             setLoading(false);
         }
@@ -92,10 +91,10 @@ export const FormRegister = ({ toast }) => {
                     {...register("course_module")}
                     id="course_module"
                     error={errors.course_module}>
-                    <option value="Primeiro Módulo">Primeiro módulo (Introdução ao Frontend)</option>
-                    <option value="Segundo Módulo">Segundo módulo (Frontend Avançado)</option>
-                    <option value="Terceiro Módulo">Terceiro módulo (Introdução ao Backend)</option>
-                    <option value="Quarto Módulo">Quarto módulo (Backend Avançado)</option>
+                    <option value="Primeiro Módulo (Introdução ao Frontend)">Primeiro módulo (Introdução ao Frontend)</option>
+                    <option value="Segundo Módulo (Frontend Avançado)">Segundo módulo (Frontend Avançado)</option>
+                    <option value="Terceiro Módulo (Introdução ao Backend) ">Terceiro módulo (Introdução ao Backend)</option>
+                    <option value="Quarto Módulo (Backend Avançado)">Quarto módulo (Backend Avançado)</option>
                 </Select>
                 <button className="btnNegative" type="submit">Cadastrar</button>
             </form>

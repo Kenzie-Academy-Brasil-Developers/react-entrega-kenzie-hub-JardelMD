@@ -12,12 +12,13 @@
 
 .btn {
     display: inline-flex;
-    height: 40.11px;
+    height: 35px;
     padding: 0px 16.243px;
     justify-content: center;
     align-items: center;
     gap: 10.152px;
     flex-shrink: 0;
+
     border-radius: 4px;
     background: var(--color-grey-3);
     color: var(--color-grey-0);
@@ -71,7 +72,7 @@
 @media (max-width: 700px) {
     .info {
         // border: 1px solid red;
-        display: flex; 
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         height: auto;

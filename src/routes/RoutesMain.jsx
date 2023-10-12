@@ -11,9 +11,9 @@ export const RoutesMain = ({toast}) => {
     return (
         //Routes é usado para envolver todas as rotas existentes na aplicação  
         <Routes>
-            <Route path="/" element={<LoginPage setUser={setUser}/>} />
+            <Route path="/" element={<LoginPage toast={toast} setUser={setUser}/>} />
             <Route path="/register" element={<RegisterPage toast={toast}/>} />
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage setUser={setUser} user={user}/>} />
             <Route path="/*" element={<NotFoundPage/>} />
         </Routes>
     );
