@@ -6,10 +6,12 @@
 .title1 {
     @extend %title;
     font-size: 18px;
-    &.alignCenter{
+
+    &.alignCenter {
         text-align: center;
     }
-    &.nowrap{
+
+    &.nowrap {
         white-space: nowrap;
     }
 }
@@ -21,7 +23,7 @@
 
 
 %text {
-    font-weight:700;
+    font-weight: 700;
     color: var(--color-grey-1);
 }
 
@@ -29,7 +31,8 @@
     @extend %text;
     color: var(--color-grey-1);
     font-size: 12px;
-    &.alignCenter{
+
+    &.alignCenter {
         text-align: center;
     }
 }
@@ -38,7 +41,6 @@
     @extend %text;
     font-size: 1rem;
 }
-
 
 .headlineBold {
     font-weight: bold;

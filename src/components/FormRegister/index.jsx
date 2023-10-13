@@ -11,26 +11,24 @@ import { useState } from "react"
 export const FormRegister = ({ toast }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formRegisterSchema),
-    });
-    const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    })
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
     const userRegister = async (formData) => {
         try {
-            setLoading(true);
-            const { data } = await api.post('/users', formData);
-            console.log(data);
-            navigate("/");
-            toast.success("Conta criada com sucesso!");
+            setLoading(true)
+            const { data } = await api.post('/users', formData)
+            navigate("/")
+            toast.success("Conta criada com sucesso!")
         } catch (error) {
-            console.log(error);
-            toast.error("Ops! Algo deu errado");
+            toast.error("Ops! Algo deu errado")
 
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
     }
     const submit = (formData) => {
-        userRegister(formData);
+        userRegister(formData)
     }
 
     return (

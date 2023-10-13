@@ -1,38 +1,36 @@
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Input } from "../Input";
+import { Input } from "../Input"
 import styles from "./style.module.scss"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 import { formLoginSchema } from "../formLoginSchema"
-import { useState } from "react";
-import { api } from "../../services/api";
+import { useState } from "react"
+import { api } from "../../services/api"
 
 export const FormLogin = ({ toast, setUser }) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(formLoginSchema),
-  });
-  const [loading, setLoading] = useState(false);
+  })
+  const [loading, setLoading] = useState(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const userLogin = async (formData) => {
     try {
-      setLoading(true);
-      const { data } = await api.post("/sessions", formData);
-      // console.log(data)
-      setUser(data.user);
-      localStorage.setItem("@TOKEN", data.token);
-      navigate("/dashboard");
-      toast.success(`Bem vindo ${data.user.name}!`);
+      setLoading(true)
+      const { data } = await api.post("/sessions", formData)
+      setUser(data.user)
+      localStorage.setItem("@TOKEN", data.token)
+      navigate("/dashboard")
+      toast.success(`Bem vindo ${data.user.name}!`)
     } catch (error) {
-      console.log(error);   
-      toast.error("Email ou senha incorretos. Tente novamente!");
+      toast.error("Email ou senha incorretos. Tente novamente!")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
   const submit = (formData) => {
-    userLogin(formData);
+    userLogin(formData)
   }
 
   return (
