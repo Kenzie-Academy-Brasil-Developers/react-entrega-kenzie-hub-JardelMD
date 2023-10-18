@@ -3,15 +3,16 @@ import { DashboardPage } from "../pages/DashboardPage"
 import { LoginPage } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import { NotFoundPage } from "../pages/NotFoundPage"
-import { useState } from "react"
+// import { useState } from "react"
 
-export const RoutesMain = ({ toast }) => {
-    const [user, setUser] = useState(null)
+export const RoutesMain = () => {
+    //Movendo estado de usuário para Context
+    // const [user, setUser] = useState(null)
     return (
         <Routes>
-            <Route path="/" element={<LoginPage toast={toast} setUser={setUser} />} />
-            <Route path="/register" element={<RegisterPage toast={toast} />} />
-            <Route path="/dashboard" element={<DashboardPage setUser={setUser} user={user} />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/*" element={<NotFoundPage />} />
         </Routes>
     )

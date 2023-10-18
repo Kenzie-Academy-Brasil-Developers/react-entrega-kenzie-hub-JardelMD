@@ -2,33 +2,37 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input"
 import styles from "./style.module.scss"
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { formLoginSchema } from "../formLoginSchema"
-import { useState } from "react"
-import { api } from "../../services/api"
+import { useContext } from "react"
+import { UserContext } from "../../providers/UserContext"
+// import { useState } from "react"
+// import { api } from "../../services/api"
 
-export const FormLogin = ({ toast, setUser }) => {
+export const FormLogin = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(formLoginSchema),
   })
-  const [loading, setLoading] = useState(false)
+  const {userLogin} = useContext(UserContext)
+  //Movendo função de Login para Context
+  // const [loading, setLoading] = useState(false)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const userLogin = async (formData) => {
-    try {
-      setLoading(true)
-      const { data } = await api.post("/sessions", formData)
-      setUser(data.user)
-      localStorage.setItem("@TOKEN", data.token)
-      navigate("/dashboard")
-      toast.success(`Bem vindo ${data.user.name}!`)
-    } catch (error) {
-      toast.error("Email ou senha incorretos. Tente novamente!")
-    } finally {
-      setLoading(false)
-    }
-  }
+  // const userLogin = async (formData) => {
+  //   try {
+  //     setLoading(true)
+  //     const { data } = await api.post("/sessions", formData)
+  //     setUser(data.user)
+  //     localStorage.setItem("@TOKEN", data.token)
+  //     navigate("/dashboard")
+  //     toast.success(`Bem vindo ${data.user.name}!`)
+  //   } catch (error) {
+  //     toast.error("Email ou senha incorretos. Tente novamente!")
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
   const submit = (formData) => {
     userLogin(formData)
   }

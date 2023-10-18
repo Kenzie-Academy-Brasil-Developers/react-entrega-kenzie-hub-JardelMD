@@ -3,30 +3,34 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input"
 import { Select } from "../Select"
 import styles from "./style.module.scss"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 import { formRegisterSchema } from "../formRegisterSchema"
-import { api } from "../../services/api"
-import { useState } from "react"
+import { useContext } from "react"
+import { UserContext } from "../../providers/UserContext"
+// import { api } from "../../services/api"
+// import { useState } from "react"
 
-export const FormRegister = ({ toast }) => {
+export const FormRegister = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formRegisterSchema),
     })
-    const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
-    const userRegister = async (formData) => {
-        try {
-            setLoading(true)
-            const { data } = await api.post('/users', formData)
-            navigate("/")
-            toast.success("Conta criada com sucesso!")
-        } catch (error) {
-            toast.error("Ops! Algo deu errado")
+    //Movendo função de cadastro para Context
+    // const [loading, setLoading] = useState(false)
+    // const navigate = useNavigate()
+    // const userRegister = async (formData) => {
+    //     try {
+    //         setLoading(true)
+    //         const { data } = await api.post('/users', formData)
+    //         navigate("/")
+    //         toast.success("Conta criada com sucesso!")
+    //     } catch (error) {
+    //         toast.error("Ops! Algo deu errado")
 
-        } finally {
-            setLoading(false)
-        }
-    }
+    //     } finally {
+    //         setLoading(false)
+    //     }
+    // }
+    const {userRegister} = useContext(UserContext)
     const submit = (formData) => {
         userRegister(formData)
     }

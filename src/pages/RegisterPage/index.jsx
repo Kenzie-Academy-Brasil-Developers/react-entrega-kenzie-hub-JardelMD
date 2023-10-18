@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { FormRegister } from "../../components/FormRegister"
 import styles from "./style.module.scss"
 
-export const RegisterPage = ({ toast }) => {
+export const RegisterPage = () => {
     return (
         <>
             <header className={styles.header}>
@@ -11,7 +11,7 @@ export const RegisterPage = ({ toast }) => {
 
             </header>
             <main className={styles.main}>
-                <FormRegister toast={toast} />
+                <FormRegister  />
             </main>
 
         </>
