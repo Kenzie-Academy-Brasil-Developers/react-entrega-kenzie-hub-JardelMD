@@ -3,12 +3,12 @@ import styles from "./style.module.scss"
 import { UserContext } from "../../providers/UserContext"
 
 export const DashboardPage = () => {
-    const {user, logout} = useContext(UserContext)
+    const {user, userLogout} = useContext(UserContext)
     return (
         <>
             <header className={styles.header}>
                 <h1 className="logo">Kenzie Hub</h1>
-                <button onClick={logout} className={styles.btn}>Sair</button>
+                <button onClick={() => userLogout()} className={styles.btn}>Sair</button>
             </header>
             <main>
                 <hr className={styles.separator} />
