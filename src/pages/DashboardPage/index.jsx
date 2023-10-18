@@ -1,16 +1,8 @@
-// import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import styles from "./style.module.scss"
 import { UserContext } from "../../providers/UserContext"
 
 export const DashboardPage = () => {
-    //Mover função de logout para Context
-    // const navigate = useNavigate()
-    // const logout = () => {
-    //     setUser("")
-    //     localStorage.clear()
-    //     navigate("/")
-    // }
     const {user, logout} = useContext(UserContext)
     return (
         <>

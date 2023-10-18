@@ -1,7 +1,6 @@
 import { FormLogin } from "../../components/FormLogin"
 import styles from "./style.module.scss"
 
-
 export const LoginPage = () => {
     return (
         <div>
