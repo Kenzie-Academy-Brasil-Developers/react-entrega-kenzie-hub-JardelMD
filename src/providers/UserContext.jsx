@@ -53,7 +53,7 @@ export const UserProvider = ({ children }) => {
       setUser(data.user)
       localStorage.setItem("@TOKEN", data.token)
       navigate("/dashboard")
-      toast.success(`Bem vindo ${data.user.name}!`)
+      toast.success(`Bem vindo, ${data.user.name}!`)
     } catch (error) {
       toast.error("Email ou senha incorretos. Tente novamente!")
     } finally {

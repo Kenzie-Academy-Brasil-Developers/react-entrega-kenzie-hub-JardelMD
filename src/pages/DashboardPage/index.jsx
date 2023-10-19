@@ -14,7 +14,7 @@ export const DashboardPage = () => {
                 <hr className={styles.separator} />
                 {user ? (
                     <div className={styles.info}>
-                        <h2 className="title1 nowrap">Olá, {user.name}</h2>
+                        <h2 className="title1 nowrap">Olá, {user.name}!</h2>
                         <span className="text1 ">{user.course_module}</span>
                     </div>
                 ) : (
@@ -26,7 +26,7 @@ export const DashboardPage = () => {
                 <hr className={styles.separator} />
                 <div className={styles.info2}>
                     <p className="title1">Que pena! Estamos em desenvolvimento :(</p>
-                    <span className={styles.span}>Nossa aplicação está em desenvolvimento, em breve teremos novidades</span>
+                    <span className={styles.span}>Nossa aplicação está em desenvolvimento, em breve teremos novidades.</span>
                 </div>
             </main>
         </>

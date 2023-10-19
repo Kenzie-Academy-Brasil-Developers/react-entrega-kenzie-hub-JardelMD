@@ -31,3 +31,13 @@ body {
 .error {
     color: var(--color-grey-0);
 }
+
+@media (max-width: 700px) {
+    .logo {
+        white-space: nowrap;
+        width: max-content;
+        height: 19.974px;
+        flex-shrink: 0;
+        color: var(--color-primary);
+    }
+}
