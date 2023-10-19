@@ -14,3 +14,21 @@
 .word {
     color: var(--color-white);
 }
+
+.button {
+    position: absolute;
+    top: 25px;
+    left: 280px;
+    color: var(--color-grey-1);
+    padding: 4px;
+}
+
+@media (max-width: 700px) {
+    .button {
+        position: absolute;
+        top: 25px;
+        right: auto;
+        color: var(--color-grey-1);
+        padding: 4px;
+    }
+}
