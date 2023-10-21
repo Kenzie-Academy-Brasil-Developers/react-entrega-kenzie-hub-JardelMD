@@ -6,11 +6,11 @@ import styles from "./style.module.scss"
 import { formRegisterSchema } from "../formRegisterSchema"
 import { useContext, useState } from "react"
 import { UserContext } from "../../providers/UserContext"
-import { MdVisibility, MdVisibilityOff } from "react-icons/md";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md"
 
 export const FormRegister = () => {
-    const [isHidden, setIsHidden] = useState(true);
-    const [passwordIsHidden, setPasswordIsHidden] = useState(true);
+    const [isHidden, setIsHidden] = useState(true)
+    const [passwordIsHidden, setPasswordIsHidden] = useState(true)
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formRegisterSchema),

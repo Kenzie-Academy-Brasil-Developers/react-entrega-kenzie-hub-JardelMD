@@ -4,10 +4,13 @@ import { Input } from "../Input"
 import styles from "./style.module.scss"
 import { Link } from "react-router-dom"
 import { formLoginSchema } from "../formLoginSchema"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../../providers/UserContext"
+import { MdVisibility, MdVisibilityOff } from "react-icons/md"
 
 export const FormLogin = () => {
+  const [isHidden, setIsHidden] = useState(true)
+
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(formLoginSchema),
   })
@@ -30,12 +33,15 @@ export const FormLogin = () => {
           {...register("email")}
           error={errors.email}
         />
-        <Input type="password"
+        <Input type={isHidden ? "password" : "text"}
           placeholder="Digite aqui sua senha"
           label="Senha"
           {...register("password")}
-          error={errors.password}
-        />
+          error={errors.password}>
+          <button className={styles.buttonPassword} onClick={(event) => event.preventDefault() || setIsHidden(!isHidden)}>
+            {isHidden ? <MdVisibilityOff size={30} /> : <MdVisibility size={30} />}
+          </button>
+        </Input>
 
 
         <button className="btnDefault" type="submit">Entrar</button>
