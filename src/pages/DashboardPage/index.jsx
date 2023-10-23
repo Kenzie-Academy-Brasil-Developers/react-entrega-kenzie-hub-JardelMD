@@ -1,10 +1,22 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import styles from "./style.module.scss"
 import { UserContext } from "../../providers/UserContext"
 import { TechList } from "../../components/TechList"
+import { CreateTechModal } from "../../components/CreateTechModal"
+import { TechContext } from "../../providers/TechContext"
+import { EditTechModal } from "../../components/EditTechModal"
+
 
 export const DashboardPage = () => {
-    const { user, userLogout } = useContext(UserContext)
+    const {  userLogout } = useContext(UserContext)
+    const { user, loadUser, editingTech } = useContext(TechContext)
+
+    useEffect(() => {
+        loadUser()
+    }, [])
+
+    const [isOpen, setIsOpen] = useState(null)
+
     return (
         <>
             <header className={styles.header}>
@@ -25,15 +37,18 @@ export const DashboardPage = () => {
                     </div>
                 )}
                 <hr className={styles.separator} />
-                {/* <div className={styles.info2}>
-                    <p className="title1">Que pena! Estamos em desenvolvimento :(</p>
-                    <span className={styles.span}>Nossa aplicação está em desenvolvimento, em breve teremos novidades.</span>
-                </div> */}
                 <div className={styles.info2}>
                     <h3 className="title2">Tecnologias</h3>
-                    <button className={styles.buttonPlus}>+</button>
+                    <button className={styles.buttonPlus} onClick={() => setIsOpen(true)}>+</button>
                 </div>
-                <TechList />
+                {user.techs &&  <TechList />}
+               
+                {isOpen ?
+                    <CreateTechModal setIsOpen={setIsOpen} />
+                    : null}
+                {editingTech ?
+                    <EditTechModal />
+                    : null}
             </main>
         </>
 
