@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import styles from "./style.module.scss"
 import { UserContext } from "../../providers/UserContext"
+import { TechList } from "../../components/TechList"
 
 export const DashboardPage = () => {
-    const {user, userLogout} = useContext(UserContext)
+    const { user, userLogout } = useContext(UserContext)
     return (
         <>
             <header className={styles.header}>
@@ -24,10 +25,15 @@ export const DashboardPage = () => {
                     </div>
                 )}
                 <hr className={styles.separator} />
-                <div className={styles.info2}>
+                {/* <div className={styles.info2}>
                     <p className="title1">Que pena! Estamos em desenvolvimento :(</p>
                     <span className={styles.span}>Nossa aplicação está em desenvolvimento, em breve teremos novidades.</span>
+                </div> */}
+                <div className={styles.info2}>
+                    <h3 className="title2">Tecnologias</h3>
+                    <button className={styles.buttonPlus}>+</button>
                 </div>
+                <TechList />
             </main>
         </>
 

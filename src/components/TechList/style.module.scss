@@ -1,0 +1,15 @@
+.techList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    max-width: 60%;
+    margin: 0 auto;
+    height: auto;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background: var(--color-grey-3);
+    flex-shrink: 0;
+}
