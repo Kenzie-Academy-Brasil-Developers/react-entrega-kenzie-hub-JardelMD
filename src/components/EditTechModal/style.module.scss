@@ -31,7 +31,6 @@
     padding: 0.75rem 1.25rem;
     border-radius: 0.25rem 0.25rem 0rem 0rem;
     background: var(--grey-2, #343B41);
-
 }
 
 .modalHeader {
@@ -97,7 +96,7 @@
     }
 }
 
-@media (max-width: 43.75rem){
+@media (max-width: 43.75rem) {
     .modalOverlay {
         display: flex;
         align-items: center;
@@ -111,7 +110,7 @@
         max-width: 80%;
         min-height: 100vh;
         background-color: transparent;
-    
+
         .modalBox {
             position: relative;
             width: 23.0625rem;

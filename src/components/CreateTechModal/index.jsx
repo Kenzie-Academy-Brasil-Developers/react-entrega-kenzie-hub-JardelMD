@@ -28,7 +28,7 @@ export const CreateTechModal = ({ setIsOpen }) => {
         <>
             <div className={styles.modalOverlay} role="dialog">
                 <div ref={modalRef} className={styles.modalBox}>
-                    <header className={styles.header }>
+                    <header className={styles.header}>
                         <div className={styles.modalHeader}>
                             <h3>Cadastrar Tecnologia</h3>
                             <button ref={buttonRef} onClick={() => setIsOpen(null)}>X</button>

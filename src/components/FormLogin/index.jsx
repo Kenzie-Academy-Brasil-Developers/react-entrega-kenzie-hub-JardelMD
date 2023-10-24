@@ -20,7 +20,6 @@ export const FormLogin = () => {
     userLogin(formData)
   }
 
-
   return (
     <section className={styles.container}>
       <h2 className="title1 alignCenter">Login</h2>
@@ -42,8 +41,6 @@ export const FormLogin = () => {
             {isHidden ? <MdVisibilityOff size={30} /> : <MdVisibility size={30} />}
           </button>
         </Input>
-
-
         <button className="btnDefault" type="submit">Entrar</button>
         <p className="headlineBold">Ainda não possui uma conta?</p>
         <Link className={styles.btn} to={"/register"}><button type="submit" className={styles.word}>Cadastre-se</button></Link >

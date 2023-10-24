@@ -1,14 +1,13 @@
 import { useContext } from "react"
 import { TechCard } from "../TechCard"
 import styles from "./style.module.scss"
-import { TechContext } from "../../providers/TechContext"
+import { UserContext } from "../../providers/UserContext"
 
 export const TechList = () => {
-    const { user } = useContext(TechContext)
-    // console.log(user.techs)
+    const {techList} = useContext(UserContext)
     return (
         <ul className={styles.techList}>
-            {user.techs.map((tech) => (
+            {techList.map((tech) => (
                 <TechCard key={tech.id} tech={tech}/>
             ))}
         </ul>

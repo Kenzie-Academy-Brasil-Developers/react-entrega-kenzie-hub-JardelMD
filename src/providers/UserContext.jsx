@@ -4,13 +4,13 @@ import { api } from "../services/api"
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-
 export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
 
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
+  const [techList, setTechList] = useState([])
 
   const userRegister = async (formData) => {
     try {
@@ -46,7 +46,7 @@ export const UserProvider = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ userRegister, userLogin, userLogout }}>
+    <UserContext.Provider value={{techList, setTechList, userRegister, userLogin, userLogout }}>
       {children}
     </UserContext.Provider>
   )

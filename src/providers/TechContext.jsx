@@ -1,13 +1,15 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { api } from "../services/api"
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { UserContext } from "./UserContext"
 
 export const TechContext = createContext({})
 
 export const TechProvider = ({ children }) => {
 
    const [user, setUser] = useState([])
+   const { techList, setTechList } = useContext(UserContext)
 
    const loadUser = async () => {
       const token = localStorage.getItem("@TOKEN")
@@ -19,6 +21,7 @@ export const TechProvider = ({ children }) => {
                },
             })
             setUser(data)
+            setTechList(data.techs)
          } catch (error) {
             console.log(error)
             localStorage.removeItem("@TOKEN")
@@ -30,7 +33,6 @@ export const TechProvider = ({ children }) => {
       try {
          const newTech = { ...formData }
          const token = localStorage.getItem("@TOKEN")
-
          const { data } = await api.post("/users/techs", newTech, {
             headers: {
                Authorization: `Bearer ${token}`
@@ -45,7 +47,6 @@ export const TechProvider = ({ children }) => {
    }
 
    const [editingTech, setEditingTech] = useState(null)
-
    const techUpdate = async (formData) => {
       try {
          const token = localStorage.getItem("@TOKEN")
@@ -63,7 +64,6 @@ export const TechProvider = ({ children }) => {
                return tech
             }
          })
-
          loadUser(editTechList)
          toast.success("Lista de tecnologias atualizada com sucesso!")
          setEditingTech(null)
@@ -81,10 +81,8 @@ export const TechProvider = ({ children }) => {
                Authorization: `Bearer ${token}`,
             },
          })
-
-         const newTechList = user.techs.filter((tech) => tech.id !== deletingId)
+         const newTechList = techList.filter((tech) => tech.id !== deletingId)
          loadUser(newTechList)
-
          toast.success("Tecnologia excluída com sucesso!")
       } catch (error) {
          console.log(error)
