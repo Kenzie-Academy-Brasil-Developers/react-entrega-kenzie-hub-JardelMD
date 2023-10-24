@@ -8,13 +8,13 @@
     margin: 0 auto;
     height: auto;
     gap: 1rem;
-    padding: 25px;
-    border-radius: 4px;
+    padding: 1.5625rem;
+    border-radius: 0.25rem;
     background: var(--color-grey-3);
     flex-shrink: 0;
 }
 
-@media (max-width: 700px){
+@media (max-width: 43.75rem){
     .techList {
         display: flex;
         flex-direction: column;
@@ -22,11 +22,11 @@
         align-items: center;
         width: auto;
         max-width: 80%;
-        margin: 20px auto;
+        margin: 1.25rem auto;
         height: auto;
         gap: 1rem;
-        padding: 25px;
-        border-radius: 4px;
+        padding: 1.5625rem;
+        border-radius: 0.25rem;
         background: var(--color-grey-3);
         flex-shrink: 0;
     }

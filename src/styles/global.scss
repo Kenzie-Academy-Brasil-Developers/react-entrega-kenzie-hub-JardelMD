@@ -22,8 +22,8 @@ body {
 
 .logo {
     white-space: nowrap;
-    width: 144.063px;
-    height: 19.974px;
+    width: 9.0039rem;
+    height: 1.2484rem;
     flex-shrink: 0;
     color: var(--color-primary);
 }
@@ -32,11 +32,11 @@ body {
     color: var(--color-grey-0);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
     .logo {
         white-space: nowrap;
         width: max-content;
-        height: 19.974px;
+        height: 1.2484rem;
         flex-shrink: 0;
         color: var(--color-primary);
     }

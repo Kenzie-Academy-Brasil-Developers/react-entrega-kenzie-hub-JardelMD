@@ -1,14 +1,14 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .word {
@@ -17,18 +17,18 @@
 
 .button {
     position: absolute;
-    top: 25px;
-    left: 280px;
+    top: 1.5625rem;
+    left: 17.5rem;
     color: var(--color-grey-1);
-    padding: 4px;
+    padding: 0.25rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
     .button {
         position: absolute;
-        top: 25px;
+        top: 1.5625rem;
         right: auto;
         color: var(--color-grey-1);
-        padding: 4px;
+        padding: 0.25rem;
     }
 }

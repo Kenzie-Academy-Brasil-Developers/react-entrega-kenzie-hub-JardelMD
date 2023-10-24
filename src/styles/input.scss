@@ -1,33 +1,33 @@
 .input {
     color: var(--color-grey-1);
-    font-size: 16.243px;
+    font-size: 1.0152rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 26.394px;
+    line-height: 1.6496rem;
 
     display: flex;
     width: auto;
-    height: 48px;
-    padding: 0px 16.243px;
+    height: 3rem;
+    padding: 0rem 1.0152rem;
     align-items: center;
-    gap: 10.152px;
+    gap: 0.6345rem;
     flex-shrink: 0;
 
-    border-radius: 4px;
-    border: 1.218px solid var(--color-grey-2);
+    border-radius: 0.25rem;
+    border: 0.0761rem solid var(--color-grey-2);
     background: var(--color-grey-2);
 
     &:focus {
         color: var(--color-grey-0);
-        border: 1.218px solid var(--color-grey-0);
+        border: 0.0761rem solid var(--color-grey-0);
         background: var(--color-grey-2);
     }
 }
 
 .label {
     color: var(--color-grey-0);
-    font-size: 12.182px;
+    font-size: 0.7614rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 0px;
+    line-height: 0rem;
 }

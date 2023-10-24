@@ -6,7 +6,7 @@
     width: 100%;
     height: auto;
     flex-shrink: 0;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     background: var(--color-grey-4);
 }
 
@@ -21,37 +21,37 @@
 
 .techName {
     white-space: nowrap;
-    width: 75.298px;
+    width: 4.7061rem;
     color: var(--color-white);
-    font-size: 14.21px;
+    font-size: 0.8881rem;
     font-style: normal;
     padding: 1rem;
     font-weight: 700;
-    line-height: 22.334px;
+    line-height: 1.3959rem;
 }
 
 .status {
-    width: 96.49px;
-    height: 22.334px;
+    width: 6.0306rem;
+    height: 1.3959rem;
     flex-shrink: 0;
     color: var(--color-grey-1);
     text-align: right;
-    font-size: 12.182px;
+    font-size: 0.7614rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22.334px;
+    line-height: 1.3959rem;
 }
 
 .buttonEdit {
-    width: 15px;
-    height: 15px;
+    width: 0.9375rem;
+    height: 0.9375rem;
     flex-shrink: 0;
     color: var(--color-white);
 }
 
 .buttonTrash {
-    width: 19px;
-    height: 19px;
+    width: 1.1875rem;
+    height: 1.1875rem;
     flex-shrink: 0;
     color: var(--color-white);
 

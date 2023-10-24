@@ -5,7 +5,7 @@
 
 .title1 {
     @extend %title;
-    font-size: 18px;
+    font-size: 1.125rem;
 
     &.alignCenter {
         text-align: center;
@@ -18,7 +18,7 @@
 
 .title2 {
     @extend %title;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 
@@ -30,7 +30,7 @@
 .text1 {
     @extend %text;
     color: var(--color-grey-1);
-    font-size: 12px;
+    font-size: 0.75rem;
 
     &.alignCenter {
         text-align: center;
@@ -45,6 +45,6 @@
 .headlineBold {
     font-weight: bold;
     color: var(--color-grey-1);
-    font-size: 12px;
+    font-size: 0.75rem;
     text-align: center;
 }

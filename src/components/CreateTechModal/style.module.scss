@@ -4,7 +4,7 @@
     justify-content: center;
     position: fixed;
     inset: 0;
-    gap: 22px;
+    gap: 1.375rem;
     margin: 0 auto;
     padding: 0;
     width: 100%;
@@ -13,23 +13,23 @@
 
     .modalBox {
         position: relative;
-        width: 369px;
-        height: 342px;
+        width: 23.0625rem;
+        height: 21.375rem;
         overflow-y: auto;
         display: inline-flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 22px;
-        border-radius: 4px;
+        gap: 1.375rem;
+        border-radius: 0.25rem;
         background: var(--color-grey-3);
-        box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+        box-shadow: 0rem 0.25rem 2.5rem -0.625rem rgba(0, 0, 0, 0.25);
     }
 }
 
 .header {
     width: 100%;
-    padding: 12px 20px;
-    border-radius: 4px 4px 0px 0px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
     background: var(--grey-2, #343B41);
 
 }
@@ -42,19 +42,19 @@
 
     h3 {
         color: var(--color-grey-0);
-        font-size: 14px;
+        font-size: 0.875rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 24px;
+        line-height: 1.5rem;
     }
 
     button {
         color: var(--color-grey-1);
         font-family: 'Nunito', sans-serif;
-        font-size: 16px;
+        font-size: 1rem;
         font-style: normal;
         font-weight: 600;
-        line-height: 26px;
+        line-height: 1.625rem;
     }
 }
 
@@ -68,43 +68,43 @@
 
 .button {
     color: var(--color-white);
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 26.394px;
+    line-height: 1.6496rem;
 
     display: inline-flex;
-    height: 48px;
+    height: 3rem;
     padding: 1rem;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     cursor: pointer;
 
-    border: 1.218px solid var(--color-primary);
+    border: 0.0761rem solid var(--color-primary);
     background: var(--color-primary);
-    border-radius: 4px;
+    border-radius: 0.25rem;
     transition: 0.3s;
 
     &:hover {
-        border: 1.218px solid var(--color-primary-focus);
+        border: 0.0761rem solid var(--color-primary-focus);
         background: var(--color-primary-focus);
     }
 
     &:focus {
-        border: 1.218px solid var(--color-primary-focus);
+        border: 0.0761rem solid var(--color-primary-focus);
         background: var(--color-primary-focus);
     }
 }
 
-@media (max-width: 700px){
+@media (max-width: 43.75rem){
     .modalOverlay {
         display: flex;
         align-items: center;
         justify-content: center;
         position: fixed;
         inset: 0;
-        gap: 22px;
+        gap: 1.375rem;
         margin: 0 auto;
         padding: 0;
         width: auto;
@@ -114,16 +114,16 @@
     
         .modalBox {
             position: relative;
-            width: 369px;
-            height: 342px;
+            width: 23.0625rem;
+            height: 21.375rem;
             overflow-y: auto;
             display: inline-flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 22px;
-            border-radius: 4px;
+            gap: 1.375rem;
+            border-radius: 0.25rem;
             background: var(--color-grey-3);
-            box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+            box-shadow: 0rem 0.25rem 2.5rem -0.625rem rgba(0, 0, 0, 0.25);
         }
     }
 }
