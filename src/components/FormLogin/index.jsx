@@ -38,7 +38,7 @@ export const FormLogin = () => {
           {...register("password")}
           error={errors.password}>
           <button className={styles.buttonPassword} onClick={(event) => event.preventDefault() || setIsHidden(!isHidden)}>
-            {isHidden ? <MdVisibilityOff size={30} /> : <MdVisibility size={30} />}
+            {isHidden ? <MdVisibility size={30} /> : <MdVisibilityOff size={30} />}
           </button>
         </Input>
         <button className="btnDefault" type="submit">Entrar</button>
